@@ -36,6 +36,7 @@ export default function Header() {
           <NavLink to="/#news">News</NavLink>
           <NavLink to="/#books">Books</NavLink>
           <NavLink to="/#gallery">Gallery</NavLink>
+          <NavLink to="/#work">Work</NavLink>
           <NavLink to="/#profile">Profile</NavLink>
           <NavLink to="/#contact">Contact</NavLink>
           {/* 一覧ページへは通常のLinkでOK */}
@@ -57,6 +58,7 @@ export default function Header() {
             <NavLink to="/#news">News</NavLink>
             <NavLink to="/#books">Books</NavLink>
             <NavLink to="/#gallery">Gallery</NavLink>
+            <NavLink to="/#work">Work</NavLink>
             <NavLink to="/#profile">Profile</NavLink>
             <NavLink to="/#contact">Contact</NavLink>
             {/* <Link to="/all-news" className="px-3 py-2 text-left hover:bg-slate-50" onClick={() => setOpen(false)}>

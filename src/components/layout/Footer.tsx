@@ -7,6 +7,15 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} All rights reserved.</span>
         </div>
         <div className="flex items-center gap-4">
+          <a className="hover:underline" href="#news">
+            News
+          </a>
+          <a className="hover:underline" href="#books">
+            Books
+          </a>
+          <a className="hover:underline" href="#gallery">
+            Gallery
+          </a>
           <a className="hover:underline" href="#work">
             Work
           </a>

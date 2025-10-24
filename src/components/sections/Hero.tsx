@@ -38,7 +38,7 @@ export default function Hero() {
               {highlight.nextEvent.name}
             </div>
             <div className="text-slate-600 text-sm">
-              {highlight.nextEvent.date} ／ {highlight.nextEvent.place}
+              {highlight.nextEvent.date} / {highlight.nextEvent.place}
             </div>
             <div className="mt-2 inline-block text-sm text-indigo-700 underline">
               詳細を見る →
@@ -59,7 +59,16 @@ export default function Hero() {
             </motion.h1>
             <p className="mt-4 text-slate-600 text-base md:text-lg">
               同人誌・イラスト・VR試作を中心に活動するサークル
-              <span className="font-semibold"> Nova Hatanakaiser</span> です。
+              <span className="font-semibold"> Nova Hatanakaiser</span>
+            </p>
+            <p className="mt-4 text-slate-600 text-base md:text-lg">
+              現在このHPには正しい情報が載っていません。
+              <br />
+              真に受けないようご注意ください。
+              <br />
+              正しい情報はContactのTwitter,GitHub,マシュマロのみとなっております。
+              <br />
+              その他の情報に関しましては、サイトを作る際に挿入したダミー情報となっております。ご了承ください。
             </p>
             <div className="mt-6 flex gap-3">
               <a
