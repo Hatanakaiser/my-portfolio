@@ -18,6 +18,18 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-2">
           <button
+            onClick={() => scrollToId("#news")}
+            className="px-3 py-1.5 rounded hover:bg-slate-100"
+          >
+            News
+          </button>
+          <button
+            onClick={() => scrollToId("#books")}
+            className="px-3 py-1.5 rounded hover:bg-slate-100"
+          >
+            Books
+          </button>
+          <button
             onClick={() => scrollToId("#work")}
             className="px-3 py-1.5 rounded hover:bg-slate-100"
           >
