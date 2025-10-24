@@ -5,11 +5,15 @@ export const socials: Social[] = [
   { label: "Pixiv", href: "https://www.pixiv.net/users/xxxxxx", icon: "pixiv" },
   {
     label: "X (Twitter)",
-    href: "https://x.com/HataNaka_Empr",
+    href: "https://x.com/Hatanaka_Empr",
     icon: "twitter",
   },
-  { label: "GitHub", href: "https://github.com/...", icon: "github" },
+  { label: "GitHub", href: "https://github.com/Hatanakaiser", icon: "github" },
   { label: "Mail", href: "mailto:t223301@st.yamagata-u.ac.jp", icon: "mail" },
   // 任意：Googleフォーム等
-  // { label: "依頼フォーム", href: "https://forms.gle/xxxx", icon: "form" },
+  {
+    label: "マシュマロ",
+    href: "https://marshmallow-qa.com/46uxvqj5qgauysl?t=Z3MqHn&utm_medium=url_text&utm_source=promotion",
+    icon: "Message",
+  },
 ];

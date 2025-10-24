@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import GalleryImage from "../ui/GalleryImage";
 import { galleryItems } from "../../data/gallery";
+import { Link } from "react-router-dom";
 
 const ALL = "すべて";
 
@@ -49,12 +50,24 @@ export default function Gallery() {
     }
   }, [openIndex]);
 
+  const listHref =
+    series === ALL
+      ? "/gallery"
+      : `/gallery?series=${encodeURIComponent(series)}`;
+
   return (
     <section
       id="gallery"
       className="scroll-mt-24 border-t border-slate-200 bg-white"
     >
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+        {/* ▼ ここを置き換え：タイトル＋右側リンク */}
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-2xl md:text-3xl font-bold">Gallery</h2>
+          <Link to={listHref} className="text-sm text-blue-600 hover:underline">
+            すべて見る →
+          </Link>
+        </div>
         <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <h2 className="text-2xl md:text-3xl font-bold">Gallery</h2>
 

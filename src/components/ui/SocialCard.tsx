@@ -5,12 +5,13 @@ import {
   ShoppingBag,
   Image,
   FileText,
+  MessageCircle,
 } from "lucide-react";
 
 export type Social = {
   label: string;
   href: string;
-  icon: "twitter" | "github" | "mail" | "booth" | "pixiv" | "form";
+  icon: "twitter" | "github" | "mail" | "booth" | "pixiv" | "form" | "Message";
 };
 
 const IconMap = {
@@ -20,6 +21,7 @@ const IconMap = {
   booth: ShoppingBag, // Boothは買い物袋アイコンで表現
   pixiv: Image, // Pixivは画像アイコンで表現
   form: FileText, // 依頼フォーム等
+  Message: MessageCircle, // マシュマロ等
 } as const;
 
 export default function SocialCard({ label, href, icon }: Social) {
