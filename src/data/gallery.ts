@@ -8,16 +8,16 @@ export type GalleryItem = {
 
 export const galleryItems: GalleryItem[] = [
   {
-    src: "/images/gallery/hasnosora_01.jpg",
-    alt: "蓮ノ空イラスト01",
-    series: "蓮ノ空",
-    w: 1080,
-    h: 1440,
+    src: "/images/gallery/YamadaMidori_2025_o.jpg",
+    alt: "山田真緑",
+    series: "イキヅライブ",
+    w: 1448,
+    h: 2048,
   },
   {
     src: "/images/gallery/hasnosora_02.jpg",
     alt: "蓮ノ空イラスト02",
-    series: "蓮ノ空",
+    series: "イキヅライブ",
     w: 1440,
     h: 1080,
   },
