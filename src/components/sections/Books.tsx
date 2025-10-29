@@ -10,7 +10,7 @@ export default function Books() {
     >
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold">Books / Works</h2>
+          <h2 className="text-2xl md:text-3xl font-bold">Books</h2>
           <Link to="/books" className="text-sm text-blue-600 hover:underline">
             すべて見る →
           </Link>

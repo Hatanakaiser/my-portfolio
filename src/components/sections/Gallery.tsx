@@ -69,7 +69,7 @@ export default function Gallery() {
           </Link>
         </div>
         <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold">Gallery</h2>
+          <h3 className="text-2xl md:text-3xl font-bold">Tags</h3>
 
           {/* フィルタ */}
           <div className="flex flex-wrap items-center gap-2">

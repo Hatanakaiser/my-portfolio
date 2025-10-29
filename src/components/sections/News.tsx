@@ -18,7 +18,7 @@ export default function News() {
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
         <div className="mb-6 flex items-center justify-between">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold">Event / News</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">News</h2>
             <p className="text-sm text-slate-600 mt-1">
               直近の参加予定・新刊情報・お知らせ
             </p>
