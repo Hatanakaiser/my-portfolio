@@ -1,11 +1,13 @@
-// BookCard.tsx
+// --- 置換 or 拡張 ---
+import { Link } from "react-router-dom";
+
 export type SaleStatus =
-  | "coming_soon" // 準備中（委託予定）
-  | "event_only" // イベント頒布のみ
-  | "booth" // Booth 通販中
-  | "melonbooks" // メロンブックス委託中
-  | "toranoana" // とらのあな委託中
-  | "sold_out"; // 完売
+  | "coming_soon"
+  | "event_only"
+  | "booth"
+  | "melonbooks"
+  | "toranoana"
+  | "sold_out";
 
 export type Channel =
   | { type: "event"; place?: string; date?: string }
@@ -14,12 +16,20 @@ export type Channel =
   | { type: "toranoana"; url: string };
 
 export type Book = {
+  slug: string; // ← 追加：URL用スラッグ
   title: string;
   desc: string;
   image: string;
   status: SaleStatus;
-  channels?: Channel[]; // 販売チャネルの配列（URLは後で入れる）
+  channels?: Channel[];
   tag?: string;
+
+  // 詳細用（任意）
+  pages?: number;
+  size?: string; // 例: "B5", "A5"
+  price?: number; // 税込円
+  samples?: string[]; // サンプル画像
+  specs?: string[]; // 箇条書き仕様
 };
 
 const statusBadge: Record<SaleStatus, { label: string; cls: string }> = {
@@ -42,6 +52,7 @@ function primaryLink(channels?: Channel[]) {
 }
 
 export default function BookCard({
+  slug,
   title,
   desc,
   image,
@@ -53,14 +64,16 @@ export default function BookCard({
 
   return (
     <div className="border rounded-2xl overflow-hidden shadow-sm bg-white hover:shadow transition">
-      <div className="aspect-[3/4] w-full overflow-hidden relative">
+      <Link
+        to={`/books/${slug}`}
+        className="aspect-[3/4] w-full overflow-hidden relative block"
+      >
         <img
           src={image}
           alt={title}
           className="object-cover w-full h-full"
           loading="lazy"
         />
-        {/* ステータスバッジ */}
         <span
           className={`absolute left-2 top-2 rounded-full px-2 py-0.5 text-xs font-medium ${statusBadge[status].cls}`}
         >
@@ -71,40 +84,43 @@ export default function BookCard({
             {tag}
           </span>
         )}
-      </div>
+      </Link>
 
       <div className="p-4">
-        <h3 className="font-semibold text-lg">{title}</h3>
-        <p className="text-sm text-slate-600 mt-1">{desc}</p>
+        <Link
+          to={`/books/${slug}`}
+          className="font-semibold text-lg hover:underline"
+        >
+          {title}
+        </Link>
+        <p className="text-sm text-slate-600 mt-1 line-clamp-2">{desc}</p>
 
-        {/* アクション */}
-        <div className="mt-3">
+        <div className="mt-3 flex items-center gap-4">
           {link ? (
             <a
               href={link}
               target="_blank"
               rel="noreferrer"
-              className="inline-block text-sm text-blue-600 hover:underline"
+              className="text-sm text-blue-600 hover:underline"
             >
               通販ページへ →
             </a>
           ) : status === "event_only" ? (
-            <span className="inline-block text-sm text-slate-600">
-              次回イベントで頒布予定
-            </span>
+            <span className="text-sm text-slate-600">イベント頒布のみ</span>
           ) : status === "coming_soon" ? (
-            <span className="inline-block text-sm text-slate-600">
-              委託準備中（公開までお待ちください）
-            </span>
+            <span className="text-sm text-slate-600">委託準備中</span>
           ) : status === "sold_out" ? (
-            <span className="inline-block text-sm text-slate-500">
-              再版検討中
-            </span>
+            <span className="text-sm text-slate-500">完売</span>
           ) : (
-            <span className="inline-block text-sm text-slate-500">
-              情報未設定
-            </span>
+            <span className="text-sm text-slate-500">詳細</span>
           )}
+
+          <Link
+            to={`/books/${slug}`}
+            className="text-sm text-slate-900 underline-offset-2 hover:underline"
+          >
+            詳細を見る
+          </Link>
         </div>
       </div>
     </div>

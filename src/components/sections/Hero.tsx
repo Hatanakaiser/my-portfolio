@@ -73,7 +73,7 @@ export default function Hero() {
             <div className="mt-6 flex gap-3">
               <a
                 href="#books"
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                className="px-4 py-2 bg-blue-200 border text-white rounded"
               >
                 頒布物を見る
               </a>

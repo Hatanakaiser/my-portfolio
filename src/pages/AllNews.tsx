@@ -32,7 +32,7 @@ export default function AllNews() {
             to="/"
             className="rounded border px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 transition"
           >
-            ← ホームに戻る
+            ← ホーム
           </Link>
         </div>
 

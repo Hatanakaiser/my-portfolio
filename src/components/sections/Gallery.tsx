@@ -79,7 +79,7 @@ export default function Gallery() {
                 onClick={() => setSeries(s)}
                 className={`rounded-full border px-3 py-1 text-sm transition ${
                   s === series
-                    ? "bg-slate-900 text-white border-slate-900"
+                    ? "bg-slate-900 border-slate-900"
                     : "hover:bg-slate-50"
                 }`}
                 aria-pressed={s === series}
@@ -135,7 +135,7 @@ export default function Gallery() {
               {/* 前/次 */}
               <button
                 type="button"
-                className="absolute left-0 top-1/2 -translate-y-1/2 p-4 text-white/80 hover:text-white"
+                className="absolute left-0 top-1/2 -translate-y-1/2 p-4 text-black/80 hover:text-black/100"
                 onClick={() =>
                   setOpenIndex((i) =>
                     i === null
@@ -149,7 +149,7 @@ export default function Gallery() {
               </button>
               <button
                 type="button"
-                className="absolute right-0 top-1/2 -translate-y-1/2 p-4 text-white/80 hover:text-white"
+                className="absolute right-0 top-1/2 -translate-y-1/2 p-4 text-black/80 hover:text-black/100"
                 onClick={() =>
                   setOpenIndex((i) =>
                     i === null ? null : (i + 1) % filtered.length,
