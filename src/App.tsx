@@ -12,6 +12,7 @@ const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
 const DEFAULT_DESC = "同人誌・イラスト・VR試作を中心に活動するサークルです。";
 
 export default function App() {
+  console.log("SITE_URL:", import.meta.env.VITE_SITE_URL);
   return (
     <div className="min-h-dvh bg-gradient-to-b from-white to-slate-100 text-slate-900">
       <>
