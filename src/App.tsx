@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import AllNews from "./pages/AllNews";
 import GalleryPage from "./pages/GalleryPage";
 import BooksPage from "./pages/BooksPage";
-import BookDetail from "./pages/BookDetail";
 
 export default function App() {
   return (
@@ -16,7 +15,6 @@ export default function App() {
         <Route path="/all-news" element={<AllNews />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/books" element={<BooksPage />} />
-        <Route path="/books/:slug" element={<BookDetail />} />
       </Routes>
       <Footer />
     </div>
