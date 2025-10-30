@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react"; // useEffect 追加
 import { Link } from "react-router-dom";
 import BookCard, {
   type Book,
@@ -45,9 +45,20 @@ export default function BooksPage() {
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
   const start = (currentPage - 1) * PAGE_SIZE;
-  const current = filtered.slice(start, start + PAGE_SIZE);
+  const current = useMemo(
+    () => filtered.slice(start, start + PAGE_SIZE),
+    [filtered, start],
+  );
 
-  const goPage = (p: number) => setPage(Math.min(Math.max(1, p), totalPages));
+  // totalPages 変化時に page を妥当範囲へ補正
+  useEffect(() => {
+    setPage((p) => Math.min(Math.max(1, p), totalPages));
+  }, [totalPages]);
+
+  // ページ変更時にトップへ（見た目の“入れ替え”感が出る）
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
   return (
@@ -122,15 +133,14 @@ export default function BooksPage() {
             全 {filtered.length} 件
           </div>
 
-          {/* 一覧 */}
           {current.length === 0 ? (
             <div className="rounded-xl border p-6 text-center text-slate-600">
               条件に一致する本がありません。
             </div>
           ) : (
-            <div className="grid gap-6 md:grid-cols-3">
+            <div key={currentPage} className="grid gap-6 md:grid-cols-3">
               {current.map((b: Book) => (
-                <BookCard key={b.title} {...b} />
+                <BookCard key={b.id ?? `${b.title}-${b.status}`} {...b} />
               ))}
             </div>
           )}
@@ -139,8 +149,9 @@ export default function BooksPage() {
           {totalPages > 1 && (
             <div className="mt-8 flex items-center justify-center gap-2">
               <button
+                type="button"
                 className="rounded border px-3 py-1 text-sm disabled:opacity-50"
-                onClick={() => goPage(currentPage - 1)}
+                onClick={() => setPage(currentPage - 1)}
                 disabled={currentPage === 1}
               >
                 前へ
@@ -149,8 +160,9 @@ export default function BooksPage() {
                 {currentPage} / {totalPages}
               </span>
               <button
+                type="button"
                 className="rounded border px-3 py-1 text-sm disabled:opacity-50"
-                onClick={() => goPage(currentPage + 1)}
+                onClick={() => setPage(currentPage + 1)}
                 disabled={currentPage === totalPages}
               >
                 次へ

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import GalleryImage from "../ui/GalleryImage";
-import { galleryItems } from "../../data/gallery";
+import { galleryItems, type GalleryItem } from "../../data/gallery";
 import { Link } from "react-router-dom";
 
 const ALL = "すべて";
@@ -15,13 +15,21 @@ export default function Gallery() {
     [],
   );
 
-  const filtered = useMemo(
-    () =>
+  const filtered: GalleryItem[] = useMemo(() => {
+    const list: GalleryItem[] =
       series === ALL
         ? galleryItems
-        : galleryItems.filter((g) => g.series === series),
-    [series],
-  );
+        : galleryItems.filter((g) => g.series === series);
+
+    const byDateDesc = (a: GalleryItem, b: GalleryItem) => {
+      const ad = a.date ?? "";
+      const bd = b.date ?? "";
+      if (ad < bd) return 1;
+      if (ad > bd) return -1;
+      return 0;
+    };
+    return [...list].sort(byDateDesc).slice(0, 4);
+  }, [series]);
 
   // キーボード操作（← → ESC）
   useEffect(() => {

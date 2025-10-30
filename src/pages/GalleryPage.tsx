@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { galleryItems } from "../data/gallery";
+import { galleryItems, type GalleryItem } from "../data/gallery";
 
 const PAGE_SIZE = 10;
 const ALL = "すべて";
@@ -8,9 +8,9 @@ const ALL = "すべて";
 export default function GalleryPage() {
   const [params, setParams] = useSearchParams();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [order, setOrder] = useState<"desc" | "asc">("desc"); // ★ 並び順
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // URLクエリ ?series=…&page=… を採用
   const seriesParam = params.get("series") ?? ALL;
   const pageParam = Math.max(1, Number(params.get("page") ?? 1));
 
@@ -19,18 +19,33 @@ export default function GalleryPage() {
     [],
   );
 
-  const filtered = useMemo(
-    () =>
+  // ★ 型安全なフィルタ＆ソート
+  const sortedFiltered: GalleryItem[] = useMemo(() => {
+    const list: GalleryItem[] =
       seriesParam === ALL
         ? galleryItems
-        : galleryItems.filter((g) => g.series === seriesParam),
-    [seriesParam],
-  );
+        : galleryItems.filter((g) => g.series === seriesParam);
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    const byDate = (a: GalleryItem, b: GalleryItem) => {
+      const ad = a.date ?? "";
+      const bd = b.date ?? "";
+      if (order === "desc") {
+        if (ad < bd) return 1;
+        if (ad > bd) return -1;
+        return 0;
+      } else {
+        if (ad > bd) return 1;
+        if (ad < bd) return -1;
+        return 0;
+      }
+    };
+    return [...list].sort(byDate);
+  }, [seriesParam, order]);
+
+  const totalPages = Math.max(1, Math.ceil(sortedFiltered.length / PAGE_SIZE));
   const currentPage = Math.min(pageParam, totalPages);
   const start = (currentPage - 1) * PAGE_SIZE;
-  const current = filtered.slice(start, start + PAGE_SIZE);
+  const current = sortedFiltered.slice(start, start + PAGE_SIZE);
 
   // キー操作（← → Esc）
   useEffect(() => {
@@ -92,7 +107,14 @@ export default function GalleryPage() {
               ← ホーム
             </Link>
           </div>
-
+          <div className="mb-3 flex items-center justify-end">
+            <button
+              onClick={() => setOrder(order === "desc" ? "asc" : "desc")}
+              className="rounded border px-3 py-1 text-sm text-slate-700 hover:bg-slate-50"
+            >
+              {order === "desc" ? "▲ 新しい順" : "▼ 古い順"}
+            </button>
+          </div>
           {/* フィルタ */}
           <div className="mb-6 flex flex-wrap items-center gap-2">
             {seriesList.map((s) => (
@@ -208,7 +230,7 @@ export default function GalleryPage() {
                 </button>
               </div>
               <div className="mt-3 text-center text-white text-sm">
-                {current[openIndex].alt}（{seriesParam}）
+                {current[openIndex].alt}（{current[openIndex].series}）
               </div>
             </div>
           </div>

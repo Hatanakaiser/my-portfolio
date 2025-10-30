@@ -30,6 +30,7 @@ export type Book = {
   price?: number; // 税込円
   samples?: string[]; // サンプル画像
   specs?: string[]; // 箇条書き仕様
+  id?: number; // 一意識別子
 };
 
 const statusBadge: Record<SaleStatus, { label: string; cls: string }> = {
