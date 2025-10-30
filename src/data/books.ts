@@ -5,7 +5,7 @@ export const books: Book[] = [
     slug: "blooming-resonance",
     title: "蓮ノ空合同誌 - Blooming Resonance",
     desc: "蓮ノ空をテーマにしたフルカラー合同誌。全16ページ。",
-    image: "/images/books/blooming-resonance.jpg",
+    image: "/images/books/20251009_ikizulive.webp",
     status: "coming_soon",
     channels: [
       {

@@ -30,6 +30,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #0a0e27; /* 深いネイビー */
+  color: #333;
 }
 
 h1 {

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import BookCard from "../ui/BookCard";
 import { books } from "../../data/books";
+import { motion } from "framer-motion";
+import { staggerContainer, cardAppear } from "@/lib/motion";
 
 export default function Books() {
   return (
@@ -15,15 +17,22 @@ export default function Books() {
             すべて見る →
           </Link>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {books.slice(0, 3).map(
-            (
-              b, // ← トップは3件だけ
-            ) => (
-              <BookCard key={b.title} {...b} />
-            ),
-          )}
-        </div>
+        <motion.div
+          variants={staggerContainer()}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-6 md:grid-cols-3"
+        >
+          {books.map((b) => (
+            <motion.div
+              key={b.id ?? `${b.title}-${b.status}`}
+              variants={cardAppear}
+            >
+              <BookCard {...b} />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

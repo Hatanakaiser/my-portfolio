@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import GalleryImage from "../ui/GalleryImage";
 import { galleryItems, type GalleryItem } from "../../data/gallery";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { staggerContainer, slideUp } from "../../lib/motion";
 
 const ALL = "ALL";
 
@@ -99,16 +101,23 @@ export default function Gallery() {
         </div>
 
         {/* サムネグリッド */}
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+        <motion.div
+          variants={staggerContainer()}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4"
+        >
           {filtered.map((g, i) => (
-            <GalleryImage
-              key={`${g.src}-${i}`}
-              src={g.src}
-              alt={g.alt}
-              onClick={() => setOpenIndex(i)}
-            />
+            <motion.div key={`${g.src}-${i}`} variants={slideUp}>
+              <GalleryImage
+                src={g.src}
+                alt={g.alt}
+                onClick={() => setOpenIndex(i)}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* モーダル */}

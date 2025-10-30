@@ -1,4 +1,6 @@
 import type { NewsItem } from "../../data/events";
+import { motion } from "framer-motion";
+import { pop } from "../../lib/motion";
 
 const TypeStyle: Record<NewsItem["type"], string> = {
   event: "bg-indigo-600",
@@ -17,7 +19,12 @@ export default function EventCard({
   badge,
 }: NewsItem) {
   return (
-    <div className="relative rounded-2xl border bg-white p-4 shadow-sm">
+    <motion.div
+      variants={pop}
+      whileHover="hover"
+      whileTap="tap"
+      className="relative rounded-2xl border bg-white p-4 shadow-sm"
+    >
       <div className="flex items-center gap-2">
         <span
           className={`inline-block rounded-full px-2 py-0.5 text-xs text-white ${TypeStyle[type]}`}
@@ -52,6 +59,6 @@ export default function EventCard({
           詳細・通販へ →
         </a>
       )}
-    </div>
+    </motion.div>
   );
 }
