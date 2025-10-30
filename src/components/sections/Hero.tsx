@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { highlight } from "../../data/highlights";
+import visual from "../../assets/visual.webp";
 
 export default function Hero() {
   return (
@@ -84,10 +85,13 @@ export default function Hero() {
           </div>
 
           <div className="md:justify-self-end">
-            <div className="aspect-video md:aspect-[4/3] rounded-2xl border bg-white shadow-sm grid place-items-center">
-              <span className="text-sm text-slate-500">
-                表紙画像やサークルビジュアルを配置
-              </span>
+            <div className="aspect-video md:aspect-[1/1] rounded-2xl border bg-white shadow-sm overflow-hidden">
+              <img
+                src={visual}
+                alt="サークルビジュアル"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

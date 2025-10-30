@@ -11,6 +11,14 @@ export type GalleryItem = {
 
 export const galleryItems: GalleryItem[] = [
   {
+    src: "/images/gallery/20250910_suzumiyaharuhi.webp",
+    alt: "涼宮ハルヒ",
+    series: "涼宮ハルヒの憂鬱",
+    date: "2025-09-10",
+    w: 675,
+    h: 1200,
+  },
+  {
     src: "/images/gallery/20250927_ikizulive.webp",
     alt: "山田真緑",
     series: "イキヅライブ",

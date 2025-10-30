@@ -12,8 +12,8 @@ export default function Profile() {
           <div className="md:col-span-1">
             <div className="aspect-square rounded-2xl overflow-hidden border bg-slate-50 shadow-sm">
               <img
-                src="/images/profile.jpg"
-                alt="畑中秀一郎（Hatanaka Shuichiro）のプロフィール写真"
+                src="/images/profile.webp"
+                alt="ハタナカ（Hatanaka）のプロフィール写真"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -27,7 +27,7 @@ export default function Profile() {
               山形大学 工学部
               情報・エレクトロニクス学科。ゲーム・VR/AIの研究/制作に取り組んでいます。
               <br />
-              趣味はポケモン、マンガ、モンハン。サークルではスキー部副部長・学習支援クラブ所属。
+              趣味はポケモン、マンガ、モンハン。
             </p>
 
             <ul className="list-disc pl-6 text-sm mt-3 space-y-1">
