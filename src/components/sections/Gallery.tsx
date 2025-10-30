@@ -3,7 +3,7 @@ import GalleryImage from "../ui/GalleryImage";
 import { galleryItems, type GalleryItem } from "../../data/gallery";
 import { Link } from "react-router-dom";
 
-const ALL = "すべて";
+const ALL = "ALL";
 
 export default function Gallery() {
   const [series, setSeries] = useState<string>(ALL);
@@ -28,7 +28,7 @@ export default function Gallery() {
       if (ad > bd) return -1;
       return 0;
     };
-    return [...list].sort(byDateDesc).slice(0, 4);
+    return [...list].sort(byDateDesc).slice(0, 8);
   }, [series]);
 
   // キーボード操作（← → ESC）
