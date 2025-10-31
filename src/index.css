@@ -30,7 +30,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #0a0e27; /* 深いネイビー */
+  background-color: #eee; /* 深いネイビー */
   color: #333;
 }
 
@@ -60,8 +60,12 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
+    width: 100%;
     color: #213547;
     background-color: #ffffff;
+  }
+  body {
+    background-color: #eee;
   }
   a:hover {
     color: #747bff;
