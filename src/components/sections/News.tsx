@@ -3,6 +3,7 @@ import EventCard from "../ui/EventCard";
 import { newsItems } from "../../data/events";
 import { motion } from "framer-motion";
 import { staggerContainer, cardAppear } from "../../lib/motion";
+import { Link } from "react-router-dom";
 
 export default function News() {
   // 日付降順で並べ替えし、最新3件だけ表示
@@ -32,12 +33,13 @@ export default function News() {
             </p>
           </div>
           {/* 「すべて見る」リンク（任意） */}
-          <a
-            href="/all-news" // 将来一覧ページを作るならここ
+
+          <Link
+            to="/all-news"
             className="text-sm text-blue-600 hover:underline"
           >
             すべて見る →
-          </a>
+          </Link>
         </div>
 
         {/* 最新3件だけをタイムライン表示 */}
