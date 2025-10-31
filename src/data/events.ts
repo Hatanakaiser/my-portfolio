@@ -37,32 +37,4 @@ export const newsItems: NewsItem[] = [
     type: "notice",
     body: "Unity×音声対話の技術本を準備中。",
   },
-  {
-    id: "2025n-01",
-    date: "2025-11-10",
-    title: "技術書典×× 申込完了",
-    type: "notice",
-    body: "Unity×音声対話の技術本を準備中。",
-  },
-  {
-    id: "2025n-01",
-    date: "2025-11-10",
-    title: "技術書典×× 申込完了",
-    type: "notice",
-    body: "Unity×音声対話の技術本を準備中。",
-  },
-  {
-    id: "2025n-01",
-    date: "2025-11-10",
-    title: "技術書典×× 申込完了",
-    type: "notice",
-    body: "Unity×音声対話の技術本を準備中。",
-  },
-  {
-    id: "2025n-01",
-    date: "2025-11-10",
-    title: "技術書典×× 申込完了",
-    type: "notice",
-    body: "Unity×音声対話の技術本を準備中。",
-  },
 ];
