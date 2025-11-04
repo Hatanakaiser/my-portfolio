@@ -6,7 +6,7 @@ import visual from "../../assets/visual.webp";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden" id="hero">
+    <section className="relative overflow-visible" id="hero">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         {/* バナー（最新刊 / 次回イベント） */}
         <div className="mb-6 grid gap-3 md:grid-cols-2">
