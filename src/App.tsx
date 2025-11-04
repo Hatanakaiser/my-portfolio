@@ -7,7 +7,7 @@ import GalleryPage from "./pages/GalleryPage";
 import BooksPage from "./pages/BooksPage";
 import BookDetail from "./pages/BookDetail";
 
-const SITE = "Nova Hatanakaiser";
+const SITE = "はたなかいざー開発室";
 const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
 const DEFAULT_DESC = "同人誌・イラスト・VR試作を中心に活動するサークルです。";
 

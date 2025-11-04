@@ -67,37 +67,8 @@ export default function Hero() {
               variants={slideUp}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
             >
-              Make. Play. Repeat.
+              A Laboratory for Making Stars.
             </motion.h1>
-            <motion.p
-              variants={slideUp}
-              className="mt-4 text-slate-600 text-base md:text-lg"
-            >
-              …
-            </motion.p>
-            <motion.div
-              variants={staggerContainer(0.15)}
-              className="mt-6 flex gap-3"
-            >
-              <motion.a
-                variants={pop}
-                whileHover="hover"
-                whileTap="tap"
-                href="#books"
-                className="px-4 py-2 bg-blue-200 text-white rounded"
-              >
-                頒布物を見る
-              </motion.a>
-              <motion.a
-                variants={pop}
-                whileHover="hover"
-                whileTap="tap"
-                href="#news"
-                className="px-4 py-2 border rounded"
-              >
-                お知らせ
-              </motion.a>
-            </motion.div>
           </motion.div>
           <Reveal as="div" amount={0.3} className="md:justify-self-end">
             <div className="md:justify-self-end">

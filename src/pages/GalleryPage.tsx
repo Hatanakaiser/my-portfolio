@@ -8,7 +8,7 @@ const ALL = "すべて";
 export default function GalleryPage() {
   const [params, setParams] = useSearchParams();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [order, setOrder] = useState<"desc" | "asc">("desc"); // ★ 並び順
+  const [order, setOrder] = useState<"desc" | "asc">("desc");
   const dialogRef = useRef<HTMLDivElement>(null);
 
   const seriesParam = params.get("series") ?? ALL;
@@ -88,7 +88,7 @@ export default function GalleryPage() {
   const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
   return (
     <>
-      <title>Gallery | Nova Hatanakaiser</title>
+      <title>Gallery | はたなかいざー開発室</title>
       <meta name="description" content="イラスト・ビジュアルの一覧" />
       <meta property="og:url" content={`${ORIGIN}/gallery`} />
       <main className="border-t border-slate-200 bg-white">

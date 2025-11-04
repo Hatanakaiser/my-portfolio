@@ -78,7 +78,7 @@ export default function BookDetail() {
   }
   const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
   const pageUrl = `${ORIGIN}/books/${book.slug}`;
-  const pageTitle = `${book.title} | Nova Hatanakaiser`;
+  const pageTitle = `${book.title} | はたなかいざー開発室`;
   const desc = book.desc ?? "同人誌の詳細ページ";
   const ogImg = book.image.startsWith("http")
     ? book.image
@@ -89,7 +89,7 @@ export default function BookDetail() {
       <meta name="description" content={desc} />
 
       <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="Nova Hatanakaiser" />
+      <meta property="og:site_name" content="はたなかいざー開発室" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={desc} />
       <meta property="og:url" content={pageUrl} />

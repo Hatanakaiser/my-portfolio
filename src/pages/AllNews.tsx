@@ -19,7 +19,7 @@ export default function AllNews() {
   const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
   return (
     <>
-      <title>All News | Nova Hatanakaiser</title>
+      <title>All News | はたなかいざー開発室</title>
       <meta name="description" content="お知らせ・参加予定・頒布情報の一覧" />
       <meta property="og:url" content={`${ORIGIN}/all-news`} />
       <main className="border-t border-slate-200 bg-white">
