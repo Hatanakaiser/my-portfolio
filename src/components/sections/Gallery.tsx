@@ -8,14 +8,9 @@ import { staggerContainer, slideUp } from "../../lib/motion";
 const ALL = "ALL";
 
 export default function Gallery() {
-  const [series, setSeries] = useState<string>(ALL);
+  const [series] = useState<string>(ALL);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
-
-  const seriesList = useMemo(
-    () => [ALL, ...Array.from(new Set(galleryItems.map((g) => g.series)))],
-    [],
-  );
 
   const filtered: GalleryItem[] = useMemo(() => {
     const list: GalleryItem[] =
@@ -77,27 +72,6 @@ export default function Gallery() {
           <Link to={listHref} className="text-sm text-blue-600 hover:underline">
             すべて見る →
           </Link>
-        </div>
-        <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <h3 className="text-2xl md:text-3xl font-bold">Tags</h3>
-
-          {/* フィルタ */}
-          <div className="flex flex-wrap items-center gap-2">
-            {seriesList.map((s) => (
-              <button
-                key={s}
-                onClick={() => setSeries(s)}
-                className={`rounded-full border px-3 py-1 text-sm transition ${
-                  s === series
-                    ? "bg-slate-900 border-slate-900"
-                    : "hover:bg-slate-50"
-                }`}
-                aria-pressed={s === series}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* サムネグリッド */}

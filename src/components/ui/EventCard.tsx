@@ -23,7 +23,7 @@ export default function EventCard({
       variants={pop}
       whileHover="hover"
       whileTap="tap"
-      className="relative rounded-2xl border bg-white p-4 shadow-sm"
+      className="relative rounded-2xl border bg-white p-4"
     >
       <div className="flex items-center gap-2">
         <span

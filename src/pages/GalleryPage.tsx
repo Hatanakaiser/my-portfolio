@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { galleryItems, type GalleryItem } from "../data/gallery";
+import GalleryImage from "../components/ui/GalleryImage";
 
 const PAGE_SIZE = 10;
 const ALL = "すべて";
@@ -123,7 +124,7 @@ export default function GalleryPage() {
                 onClick={() => setSeries(s)}
                 className={`rounded-full border px-3 py-1 text-sm transition ${
                   s === seriesParam
-                    ? "bg-slate-900 text-white border-slate-900"
+                    ? "bg-slate-900 text-black border-slate-900"
                     : "hover:bg-slate-50"
                 }`}
                 aria-pressed={s === seriesParam}
@@ -134,21 +135,15 @@ export default function GalleryPage() {
           </div>
 
           {/* 一覧 */}
-          <div className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {current.map((g, i) => (
-              <button
-                key={`${g.src}-${i}`}
-                type="button"
-                onClick={() => setOpenIndex(i)}
-                className="group relative block overflow-hidden rounded-xl border bg-slate-50"
-              >
-                <img
+              <div key={`${g.src}-${i}`}>
+                <GalleryImage
                   src={g.src}
                   alt={g.alt}
-                  className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  loading="lazy"
+                  onClick={() => setOpenIndex(i)}
                 />
-              </button>
+              </div>
             ))}
           </div>
 
