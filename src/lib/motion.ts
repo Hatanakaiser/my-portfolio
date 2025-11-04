@@ -33,7 +33,7 @@ export const cardAppear: Variants = {
 };
 
 export const pop: Variants = {
-  initial: { scale: 1 },
-  hover: { scale: 1.15, transition: transitionFast },
+  initial: { scale: 1, y: 0, zIndex: 0 },
+  hover: { scale: 1.2, y: -2, zIndex: 20, transition: transitionFast },
   tap: { scale: 0.98, transition: transitionFast },
 };

@@ -1,5 +1,7 @@
 // --- 置換 or 拡張 ---
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { pop } from "../../lib/motion";
 
 export type SaleStatus =
   | "coming_soon"
@@ -64,66 +66,73 @@ export default function BookCard({
   const link = primaryLink(channels);
 
   return (
-    <div className="border rounded-2xl overflow-hidden shadow-sm bg-white hover:shadow transition">
-      <Link
-        to={`/books/${slug}`}
-        className="aspect-[3/4] w-full overflow-hidden relative block"
-      >
-        <img
-          src={image}
-          alt={title}
-          className="object-cover w-full h-full"
-          loading="lazy"
-        />
-        <span
-          className={`absolute left-2 top-2 rounded-full px-2 py-0.5 text-xs font-medium ${statusBadge[status].cls}`}
-        >
-          {statusBadge[status].label}
-        </span>
-        {tag && (
-          <span className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-xs border">
-            {tag}
-          </span>
-        )}
-      </Link>
-
-      <div className="p-4">
+    <motion.div
+      variants={pop}
+      whileHover="hover"
+      whileTap="tap"
+      className="relative p-4"
+    >
+      <div className="border rounded-2xl overflow-hidden shadow-sm bg-white hover:shadow transition">
         <Link
           to={`/books/${slug}`}
-          className="font-semibold text-lg hover:underline"
+          className="aspect-[3/4] w-full overflow-hidden relative block"
         >
-          {title}
-        </Link>
-        <p className="text-sm text-slate-600 mt-1 line-clamp-2">{desc}</p>
-
-        <div className="mt-3 flex items-center gap-4">
-          {link ? (
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm text-blue-600 hover:underline"
-            >
-              通販ページへ →
-            </a>
-          ) : status === "event_only" ? (
-            <span className="text-sm text-slate-600">イベント頒布のみ</span>
-          ) : status === "coming_soon" ? (
-            <span className="text-sm text-slate-600">委託準備中</span>
-          ) : status === "sold_out" ? (
-            <span className="text-sm text-slate-500">完売</span>
-          ) : (
-            <span className="text-sm text-slate-500">詳細</span>
+          <img
+            src={image}
+            alt={title}
+            className="object-cover w-full h-full"
+            loading="lazy"
+          />
+          <span
+            className={`absolute left-2 top-2 rounded-full px-2 py-0.5 text-xs font-medium ${statusBadge[status].cls}`}
+          >
+            {statusBadge[status].label}
+          </span>
+          {tag && (
+            <span className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-xs border">
+              {tag}
+            </span>
           )}
+        </Link>
 
+        <div className="p-4">
           <Link
             to={`/books/${slug}`}
-            className="text-sm text-slate-900 underline-offset-2 hover:underline"
+            className="font-semibold text-lg hover:underline"
           >
-            詳細を見る
+            {title}
           </Link>
+          <p className="text-sm text-slate-600 mt-1 line-clamp-2">{desc}</p>
+
+          <div className="mt-3 flex items-center gap-4">
+            {link ? (
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-blue-600 hover:underline"
+              >
+                通販ページへ →
+              </a>
+            ) : status === "event_only" ? (
+              <span className="text-sm text-slate-600">イベント頒布のみ</span>
+            ) : status === "coming_soon" ? (
+              <span className="text-sm text-slate-600">委託準備中</span>
+            ) : status === "sold_out" ? (
+              <span className="text-sm text-slate-500">完売</span>
+            ) : (
+              <span className="text-sm text-slate-500">詳細</span>
+            )}
+
+            <Link
+              to={`/books/${slug}`}
+              className="text-sm text-slate-900 underline-offset-2 hover:underline"
+            >
+              詳細を見る
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
