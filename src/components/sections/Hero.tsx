@@ -84,7 +84,7 @@ export default function Hero() {
                 whileHover="hover"
                 whileTap="tap"
                 href="#books"
-                className="px-4 py-2 bg-blue-500 text-white rounded"
+                className="px-4 py-2 bg-blue-200 text-white rounded"
               >
                 頒布物を見る
               </motion.a>
