@@ -89,7 +89,7 @@ export default function GalleryPage() {
   const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
   return (
     <>
-      <title>Gallery | はたなかいざー開発室</title>
+      <title>Gallery | はたなかいざー醸造所</title>
       <meta name="description" content="イラスト・ビジュアルの一覧" />
       <meta property="og:url" content={`${ORIGIN}/gallery`} />
       <main className="border-t border-slate-200 bg-white">

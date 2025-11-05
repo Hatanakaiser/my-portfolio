@@ -28,7 +28,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-slate-200">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <nav className="font-black tracking-tight text-xl md:text-2xl">
-          <NavLink to="/#top">はたなかいざー開発室</NavLink>
+          <NavLink to="/#top">はたなかいざー醸造所</NavLink>
         </nav>
 
         <nav className="hidden md:flex items-center gap-2">

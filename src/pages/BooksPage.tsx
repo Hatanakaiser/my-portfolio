@@ -63,7 +63,7 @@ export default function BooksPage() {
   const ORIGIN = import.meta.env.VITE_SITE_URL ?? window.location.origin;
   return (
     <>
-      <title>Books / Works | はたなかいざー開発室</title>
+      <title>Books / Works | はたなかいざー醸造所</title>
       <meta name="description" content="頒布物の一覧と検索" />
       <meta property="og:url" content={`${ORIGIN}/books`} />
       <main className="border-t border-slate-200 bg-white">
