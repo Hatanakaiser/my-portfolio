@@ -58,4 +58,12 @@ export const galleryItems: GalleryItem[] = [
     w: 4093,
     h: 2894,
   },
+  {
+    src: "/images/gallery/20251107_nijigasaki.webp",
+    alt: "優木せつ菜(映ヶ咲2章：私服ver.)",
+    series: "虹ヶ咲",
+    date: "2025-11-07",
+    w: 4093,
+    h: 2894,
+  },
 ];
