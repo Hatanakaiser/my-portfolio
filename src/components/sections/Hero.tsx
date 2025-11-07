@@ -67,7 +67,7 @@ export default function Hero() {
               variants={slideUp}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
             >
-              A Laboratory for Making Stars.
+              A Laboratory for Crafting Stars.
             </motion.h1>
           </motion.div>
           <Reveal as="div" amount={0.3} className="md:justify-self-end">
