@@ -72,7 +72,7 @@ export default function Hero() {
           </motion.div>
           <Reveal as="div" amount={0.3} className="md:justify-self-end">
             <div className="md:justify-self-end">
-              <div className="aspect-video md:aspect-[1/1] rounded-2xl border bg-white shadow-sm overflow-hidden">
+              <div className="aspect-video md:aspect-[75/63] rounded-2xl border bg-white shadow-sm overflow-hidden">
                 <img
                   src={visual}
                   alt="サークルビジュアル"
