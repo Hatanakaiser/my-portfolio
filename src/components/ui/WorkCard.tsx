@@ -13,11 +13,11 @@ export default function WorkCard({ title, desc, tag }: Work) {
         <span className="text-xs text-slate-500">サムネイル</span>
       </div>
       <p className="mt-3 text-sm text-slate-600">{desc}</p>
-      <div className="mt-3">
+      {/* <div className="mt-3">
         <button className="text-sm border rounded px-3 py-1 hover:bg-slate-50">
           詳しく
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

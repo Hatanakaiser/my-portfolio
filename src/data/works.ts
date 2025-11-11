@@ -2,13 +2,13 @@ import type { Work } from "@/components/ui/WorkCard";
 
 export const works: Work[] = [
   {
-    title: "イラスト作品集",
-    desc: "CLIP STUDIO / Procreate などで制作したイラストを厳選。",
+    title: "イラスト作品",
+    desc: "CLIP STUDIOでイラストを制作。",
     tag: "Illustration",
   },
   {
     title: "同人誌・書籍",
-    desc: "ラブライブ！二次創作・技術同人などの頒布物まとめ。",
+    desc: "ラブライブ！二次創作・技術同人などを制作。",
     tag: "Books",
   },
   {
