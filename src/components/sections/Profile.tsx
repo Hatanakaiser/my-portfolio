@@ -13,7 +13,7 @@ export default function Profile() {
             <div className="aspect-square rounded-2xl overflow-hidden border bg-slate-50 shadow-sm">
               <img
                 src="/images/profile.webp"
-                alt="ハタナカ（Hatanaka）のプロフィール写真"
+                alt="はたなか（Hatanaka）のプロフィール写真"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -22,10 +22,9 @@ export default function Profile() {
 
           {/* テキストエリア */}
           <div className="md:col-span-2">
-            <h3 className="mb-2 font-semibold">ハタナカ/Hatanaka</h3>
+            <h3 className="mb-2 font-semibold">はたなか/Hatanaka</h3>
             <p>
-              山形大学 工学部
-              情報・エレクトロニクス学科。ゲーム・VR/AIの研究/制作に取り組んでいます。
+              ゲーム・VR/AIの研究/制作に取り組んでいます。
               <br />
               趣味はポケモン、マンガ、モンハン。
             </p>
