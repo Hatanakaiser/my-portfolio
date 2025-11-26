@@ -3,10 +3,13 @@ import { motion } from "framer-motion";
 import { pop } from "../../lib/motion";
 
 const TypeStyle: Record<NewsItem["type"], string> = {
-  event: "bg-indigo-600",
-  release: "bg-emerald-600",
-  restock: "bg-amber-600",
-  notice: "bg-slate-700",
+  event: "bg-indigo-600", // 濃い青・紫
+  release: "bg-emerald-600", // 緑
+  restock: "bg-amber-600", // オレンジ
+  notice: "bg-blue-600", // 青
+  join: "bg-pink-600", // ピンク
+  progress: "bg-cyan-600", // 水色
+  report: "bg-gray-500", // 灰色
 };
 
 export default function EventCard({
