@@ -36,12 +36,19 @@ export const newsItems: NewsItem[] = [
   {
     id: "2025s-02",
     date: "2025-07-22",
-    title: "スクミュイラスト合同『MUSICAL FESTIVAL Ⅱ』へ寄稿",
+    title: "スクミュイラスト合同『MUSICAL FESTIVAL Ⅱ』へイラスト寄稿",
     type: "join",
     body: "レタス720さん主催：スクミュイラスト合同『MUSICAL FESTIVAL Ⅱ』【スクミュオンリー２】へ参加しました。僕ラブ47で頒布予定です。",
   },
   {
     id: "2025o-01",
+    date: "2025-11-15",
+    title: "Webゲーム制作企画始動",
+    type: "notice",
+    body: "新たなWebゲーム制作企画を始動しました。詳細は追ってお知らせします。",
+  },
+  {
+    id: "2025o-02",
     date: "2025-11-28",
     title: "僕ラブ48 サークル参加申し込み",
     type: "event",

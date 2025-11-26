@@ -1,13 +1,13 @@
 export const highlight = {
   latestBook: {
-    title: "Blooming Resonance",
-    sub: "蓮ノ空合同誌 / フルカラー16p",
-    link: "https://hatanaka.booth.pm/items/000000", // Booth等
+    title: "MUSICAL FESTIVALⅡ",
+    sub: "スクールアイドルミュージカルイラスト合同誌 / フルカラー",
+    link: "https://www.melonbooks.co.jp/detail/detail.php?product_id=3213121s/000000", // Booth等
   },
   nextEvent: {
-    name: "コミックマーケット××",
-    date: "2025-12-30",
-    place: "東ホール ○-△",
-    link: "https://webcatalog-free.circle.ms/", // 任意
+    name: "僕らのラブライブ！48",
+    date: "2026-01-25",
+    place: "横浜産貿ホール　マリネリア",
+    link: "https://www.puniket.com/lovelive/", // 任意
   },
 };
