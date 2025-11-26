@@ -26,11 +26,11 @@ export default function Profile() {
             <p>
               ゲーム・VR/AIの研究/制作に取り組んでいます。
               <br />
-              趣味はポケモン、マンガ、モンハン。
+              好きなゲームはポケモン、モンハン。
             </p>
 
             <ul className="list-disc pl-6 text-sm mt-3 space-y-1">
-              <li>得意分野：TypeScript / React / Unity (C#) / C++</li>
+              {/* <li>得意分野：TypeScript / React / Unity (C#) / C++</li> */}
               <li>関心領域：VR音声対話・Live2D・Webゲーム</li>
               <li>目標：ユーザーの心を動かす体験を作ること</li>
             </ul>
