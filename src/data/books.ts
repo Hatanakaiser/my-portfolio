@@ -2,28 +2,28 @@ import type { Book } from "../components/ui/BookCard";
 
 export const books: Book[] = [
   {
-    slug: "blooming-resonance",
-    title: "蓮ノ空合同誌 - Blooming Resonance",
-    desc: "蓮ノ空をテーマにしたフルカラー合同誌。全16ページ。",
-    image: "/images/books/20251009_ikizulive.webp",
+    slug: "R3BIRTH_Ski",
+    title: "タイトル未定",
+    desc: "R3BIRTHがスキーに行く話",
+    image: "/images/books/僕ラブ48_サークルカット.webp",
     status: "coming_soon",
     channels: [
       {
         type: "event",
-        place: "コミックマーケット×× 東○-△",
+        place: "僕らのラブライブ！48　虹ヶ咲25",
         date: "2025-12-30",
       },
       // { type: "booth", url: "https://hatanaka.booth.pm/items/xxxxxx" },
     ],
     tag: "二次創作",
-    pages: 16,
+    pages: 24,
     size: "B5",
-    price: 1000,
+    price: 500,
     samples: [
       "/images/books/blooming-resonance_sample1.jpg",
       "/images/books/blooming-resonance_sample2.jpg",
     ],
-    specs: ["フルカラー", "本文マットコート", "特典ポストカード（予定）"],
+    specs: ["白黒", "本文マットコート", "特典ポストカード（予定）"],
   },
   {
     slug: "vr-dialogue-guide",
