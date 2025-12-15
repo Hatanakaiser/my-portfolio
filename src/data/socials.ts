@@ -12,12 +12,30 @@ export const socials: Social[] = [
     href: "https://x.com/Hatanaka_Empr",
     icon: "twitter",
   },
-  { label: "GitHub", href: "https://github.com/Hatanakaiser", icon: "github" },
-  { label: "Mail", href: "mailto:hatanakaiserbrewery@gmail.com", icon: "mail" },
+  {
+    label: "Youtube",
+    href: "https://www.youtube.com/@はたなかいざーぶるわりー",
+    icon: "Youtube",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Hatanakaiser",
+    icon: "github",
+  },
+  {
+    label: "Mail",
+    href: "mailto:hatanakaiserbrewery@gmail.com",
+    icon: "mail",
+  },
   // 任意：Googleフォーム等
   {
     label: "マシュマロ",
     href: "https://marshmallow-qa.com/ywbiap43cm2fltn?t=g8gaUO&utm_medium=url_text&utm_source=promotion",
     icon: "Message",
+  },
+  {
+    label: "Discord",
+    href: "https://marshmallow-qa.com/ywbiap43cm2fltn?t=g8gaUO&utm_medium=url_text&utm_source=promotion",
+    icon: "Discord",
   },
 ];

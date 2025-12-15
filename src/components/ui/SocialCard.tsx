@@ -6,12 +6,23 @@ import {
   Image,
   FileText,
   MessageCircle,
+  Gamepad,
+  Youtube,
 } from "lucide-react";
 
 export type Social = {
   label: string;
   href: string;
-  icon: "twitter" | "github" | "mail" | "booth" | "pixiv" | "form" | "Message";
+  icon:
+    | "twitter"
+    | "github"
+    | "mail"
+    | "booth"
+    | "pixiv"
+    | "form"
+    | "Message"
+    | "Discord"
+    | "Youtube";
 };
 
 const IconMap = {
@@ -22,6 +33,8 @@ const IconMap = {
   pixiv: Image, // Pixivは画像アイコンで表現
   form: FileText, // 依頼フォーム等
   Message: MessageCircle, // マシュマロ等
+  Discord: Gamepad,
+  Youtube: Youtube,
 } as const;
 
 export default function SocialCard({ label, href, icon }: Social) {

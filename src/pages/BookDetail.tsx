@@ -102,7 +102,6 @@ export default function BookDetail() {
 
       <main className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-          {/* パンくず */}
           <div className="mb-4 text-sm">
             <Link to="/" className="text-blue-600 hover:underline">
               Home
