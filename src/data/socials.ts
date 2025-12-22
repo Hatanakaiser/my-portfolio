@@ -35,7 +35,7 @@ export const socials: Social[] = [
   },
   {
     label: "Discord",
-    href: "https://marshmallow-qa.com/ywbiap43cm2fltn?t=g8gaUO&utm_medium=url_text&utm_source=promotion",
+    href: "https://discord.gg/7VSub6EZNZ",
     icon: "Discord",
   },
 ];
